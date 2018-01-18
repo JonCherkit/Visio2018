@@ -1,0 +1,55 @@
+.flex-container
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.row
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.image-container
+{
+	display: flex;
+	justify-content: center;
+	margin: 25px;
+	border-radius: 5px;
+}
+
+.Thumb
+{
+	border: 2px solid salmon;
+}
+
+h1
+{
+	text-align: center;
+	padding-bottom: 150px;
+	padding-top: 50px;
+	background: linear-gradient(silver,white);
+	border-radius: 25px;
+	text-decoration: underline;
+}
+
+img
+{
+	display:flex;
+	height: auto;
+}
+
+.Displayed
+{
+	border: 2px solid salmon;
+	display: flex;
+	width: 90%;
+	height: auto;
+}
+
+.invisible
+{	border : 0px;
+	display: none;
+}
