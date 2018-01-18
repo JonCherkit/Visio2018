@@ -18,4 +18,16 @@ document.addEventListener('DOMContentLoaded',function(){
 		tar.classList.remove('invisible');
 		});
 	}
+
+// ------------ Partie AJAX ------------
+var xhr = new XMLHttpRequest();	//Création de l'objet
+
+xhr.open('GET','public/js/images.json'); 	//Demande au server du fichier images.json
+xhr.addEventListener('load',function(){
+	var responseData = JSON.parse(this.responseText);
+	console.log(responseData);
+});
+
+
+xhr.send()	//Envois de la requete
 });
