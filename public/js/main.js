@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded',function(){
 var xhr = new XMLHttpRequest();	//Création de l'objet
 
 xhr.open('GET','public/js/images.json'); 	//Demande au server du fichier images.json
+// Listener sur l'évènement LOAD execute la fonction qui récupère, parse et affiche en console le contenu du fichier /public/js/images.json
 xhr.addEventListener('load',function(){
 	var responseData = JSON.parse(this.responseText);
 	console.log(responseData);
