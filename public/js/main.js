@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',function(){
 	var tar = document.querySelectorAll('.Displayed')[0];
 	
 
-	// Parcour des miniatures
+	// Parcour des miniatures, évènement 'click' modifie la source de la zone d'affichage
 	for (var imageNode of imagesNode)
 	{
 		imageNode.addEventListener('click',function()
@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded',function(){
 			tar.classList.remove('invisible');
 		});
 	}
+
+	//--------- Bouton "Next_Image" --------
+	
+
 
 // ------------ Partie AJAX ------------
 
