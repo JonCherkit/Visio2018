@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(){
 
-	// Récupère l'ensemble des images du documents
+	// Récupère l'ensemble des miniatures du documents
 	var imagesNode = document.querySelectorAll('.Thumb');
 
 	// console.log(imagesNode);	//Debug
@@ -9,26 +9,29 @@ document.addEventListener('DOMContentLoaded',function(){
 	var tar = document.querySelectorAll('.Displayed')[0];
 	
 
-	// Boucle de parcour de noeud
+	// Parcour des miniatures
 	for (var imageNode of imagesNode)
 	{
-		imageNode.addEventListener('click',function(){
-		var result = this.dataset.maxrespath;
-		tar.src = result;
-		tar.classList.remove('invisible');
+		imageNode.addEventListener('click',function()
+		{
+			tar.src = this.dataset.maxrespath;
+			tar.classList.remove('invisible');
 		});
 	}
 
 // ------------ Partie AJAX ------------
-var xhr = new XMLHttpRequest();	//Création de l'objet
+
+var xhr = new XMLHttpRequest();	//Création de requete asynchrone
 
 xhr.open('GET','public/js/images.json'); 	//Demande au server du fichier images.json
-// Listener sur l'évènement LOAD execute la fonction qui récupère, parse et affiche en console le contenu du fichier /public/js/images.json
+// Listener sur l'évènement 'load' ,récupère, parse et affiche en console le contenu du fichier /public/js/images.json
 xhr.addEventListener('load',function(){
 	var responseData = JSON.parse(this.responseText);
 	console.log(responseData);
 });
 
-
 xhr.send()	//Envois de la requete
+
+//---------------------------------------
+
 });
